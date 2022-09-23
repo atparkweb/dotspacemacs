@@ -581,9 +581,10 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-  (setq backup-directory-alist `(("." . "~/.emacs_backups"))) ; keep backup files out of my projects
-  (setq helm-swoop-split-with-multiple-windows t)
-  (setq helm-swoop-split-direction 'split-window-horizontally)
+  (setq backup-directory-alist
+        `((".*" . ,temporary-file-directory)))
+  (setq auto-save-file-name-transforms
+        `((".*" ,temporary-file-directory t)))
   (setup-indent 2)
 )
 
@@ -608,6 +609,8 @@ before packages are loaded."
       (spacemacs/toggle-transparency))))
   (add-hook 'window-setup-hook (spacemacs/toggle-fill-column-indicator))
   (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-common-lisp-mode)
+  (setq helm-swoop-split-with-multiple-windows t)
+  (setq helm-swoop-split-direction 'split-window-horizontally)
 
   (define-key evil-normal-state-map (kbd "-")
     (lambda ()
