@@ -48,7 +48,10 @@ This function should only modify configuration layer settings."
      graphql
      haskell
      helm
-     javascript
+     (javascript :variables
+                 javascript-backend 'tide
+                 javascript-fmt-tool 'prettier
+                 node-add-modules-path t)
      lsp
      lua
      markdown
@@ -73,7 +76,11 @@ This function should only modify configuration layer settings."
      syntax-checking
      themes-megapack
      treemacs
-     typescript
+     (typescript :variables
+                 typescript-backend 'tide
+                 typescript-fmt-tool 'prettier
+                 typescript-linter 'tslint
+                 tide-tsserver-executable "/home/atpark333/.nvm/versions/node/v16.16.0/bin/tsserver")
      vue
      (xclipboard :variables
                  xclipboard-enable-cliphist t)
@@ -88,7 +95,10 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(
+                                      rjsx-mode
+                                      yasnippet-snippets
+                                      prettier-js)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -569,11 +579,24 @@ See the header of this file for more information."
 (defun setup-indent (n)
   ;; web development indentation
   (setq js-indent-level n)
+  (setq typescript-indent-level n)
   (setq js2-basic-offset n)
   (setq web-mode-markup-indent-offset n)
   (setq web-mode-css-indent-offset n)
   (setq web-mode-code-indent-offset n)
   (setq css-indent-offset n))
+
+(defun setup-tide ()
+  (interactive)
+  (tide-setup)
+  (flycheck-mode +1)
+  (setq typescript-indent-level 2)
+  (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (eldoc-mode +1)
+  (tide-hl-identifier-mode +1)
+  (company-mode +1))
+
+(setq company-tooltip-align-annotations t)
 
 (defun dotspacemacs/user-init ()
   "Initialization for user code:
@@ -581,6 +604,7 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
+  (add-to-list 'exec-path "/home/atpark333/.nvm/versions/node/v16.16.0/bin ")
   (setq backup-directory-alist
         `((".*" . ,temporary-file-directory)))
   (setq auto-save-file-name-transforms
@@ -608,6 +632,8 @@ before packages are loaded."
       (spacemacs/toggle-frame-fullscreen)
       (spacemacs/toggle-transparency))))
   (add-hook 'window-setup-hook (spacemacs/toggle-fill-column-indicator))
+  (add-hook 'before-save-hook 'tide-format-before-save)
+  (add-hook 'typescript-mode-hook #'setup-tide)
   (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-common-lisp-mode)
   (setq helm-swoop-split-with-multiple-windows t)
   (setq helm-swoop-split-direction 'split-window-horizontally)
