@@ -51,6 +51,8 @@ This function should only modify configuration layer settings."
      (javascript :variables
                  javascript-backend 'tide
                  javascript-fmt-tool 'prettier
+                 javascript-fmt-on-save t
+                 js2-mode-show-strict-warnings nil
                  node-add-modules-path t)
      lsp
      lua
@@ -59,6 +61,7 @@ This function should only modify configuration layer settings."
      org
      phoenix
      php
+     prettier
      prolog
      (python :variables
              python-backend 'python-lsp-server
@@ -79,7 +82,9 @@ This function should only modify configuration layer settings."
      (typescript :variables
                  typescript-backend 'tide
                  typescript-fmt-tool 'prettier
-                 typescript-linter 'tslint)
+                 typescript-fmt-on-save t
+                 js2-mode-show-strict-warnings nil
+                 typescript-linter 'eslint)
      vue
      (xclipboard :variables
                  xclipboard-enable-cliphist t)
@@ -292,7 +297,7 @@ It should only modify the values of Spacemacs settings."
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
    dotspacemacs-default-font '("M PLUS 1 Code"
-                               :size 24
+                               :size 16
                                :weight regular
                                :width normal)
 
@@ -386,7 +391,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup nil
+   dotspacemacs-fullscreen-at-startup t
 
    ;; If non-nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
@@ -395,7 +400,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
 
    ;; If non-nil the frame is undecorated when Emacs starts up. Combine this
    ;; variable with `dotspacemacs-maximized-at-startup' in OSX to obtain
@@ -603,7 +608,7 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-  (add-to-list 'exec-path "~/.nvm/versions/node/v14.21.1/bin ")
+  (add-to-list 'exec-path "~/.nvm/versions/node/v16.19.0/bin ")
   (add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
   (setq backup-directory-alist
         `((".*" . ,temporary-file-directory)))
@@ -613,7 +618,6 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
       "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
   (setup-indent 4)
 )
-
 
 (defun dotspacemacs/user-load ()
   "Library to load while dumping.
@@ -629,17 +633,12 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  (add-hook 'after-make-frame-functions (
-    (lambda ()
-      (spacemacs/toggle-frame-fullscreen)
-      (spacemacs/toggle-transparency))))
-  (add-hook 'window-setup-hook (spacemacs/toggle-fill-column-indicator))
+  ;(add-hook 'after-make-frame-functions (
+  ; (lambda ()
+  ;   (spacemacs/toggle-transparency))))
   (add-hook 'before-save-hook 'tide-format-before-save)
   (add-hook 'typescript-mode-hook #'setup-tide)
   (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-common-lisp-mode)
-  (setq helm-swoop-split-with-multiple-windows t)
-  (setq helm-swoop-split-direction 'split-window-horizontally)
-
   (define-key evil-normal-state-map (kbd "-")
     (lambda ()
       (interactive)
@@ -668,6 +667,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    '("a3e99dbdaa138996bb0c9c806bc3c3c6b4fd61d6973b946d750b555af8b7555b" "db7f422324a763cfdea47abf0f931461d1493f2ecf8b42be87bbbbbabf287bfe" "78e6be576f4a526d212d5f9a8798e5706990216e9be10174e3f3b015b8662e27" "a37d20710ab581792b7c9f8a075fcbb775d4ffa6c8bce9137c84951b1b453016" "eb122e1df607ee9364c2dfb118ae4715a49f1a9e070b9d2eb033f1cefd50a908" default))
+ '(org-agenda-files '("~/Documents/octoenergy/planner/tasks.org"))
  '(package-selected-packages
    '(company-php ac-php-core xcscope company-phpactor drupal-mode geben php-auto-yasnippets php-extras php-mode phpactor composer php-runtime phpcbf phpunit graphviz-dot-mode add-node-modules-path company counsel-gtags counsel swiper ivy dap-mode lsp-docker lsp-treemacs bui yaml lsp-mode markdown-mode ggtags helm-gtags impatient-mode htmlize import-js grizzl js-doc js2-refactor yasnippet multiple-cursors livid-mode nodejs-repl npm-mode prettier-js skewer-mode js2-mode simple-httpd tern web-beautify ws-butler writeroom-mode winum which-key volatile-highlights vim-powerline vi-tilde-fringe uuidgen use-package undo-tree treemacs-projectile treemacs-persp treemacs-icons-dired treemacs-evil toc-org term-cursor symon symbol-overlay string-inflection string-edit spacemacs-whitespace-cleanup spacemacs-purpose-popwin spaceline-all-the-icons space-doc restart-emacs request rainbow-delimiters quickrun popwin pcre2el password-generator paradox overseer org-superstar open-junk-file nameless multi-line macrostep lorem-ipsum link-hint inspector info+ indent-guide hybrid-mode hungry-delete holy-mode hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio font-lock+ flycheck-package flycheck-elsa flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-evilified-state evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu emr elisp-slime-nav elisp-def editorconfig dumb-jump drag-stuff dotenv-mode dired-quick-sort diminish devdocs define-word column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile aggressive-indent ace-link ace-jump-helm-line))
  '(warning-suppress-log-types '((comp) (comp)))
@@ -677,6 +677,5 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:background nil))))
  '(highlight-parentheses-highlight ((nil (:weight ultra-bold))) t))
 )
