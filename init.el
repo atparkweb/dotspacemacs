@@ -64,6 +64,7 @@ This function should only modify configuration layer settings."
      prettier
      prolog
      (python :variables
+             python-pipenv-activate t
              python-backend 'python-lsp-server
              python-test-runner 'pytest)
      (react :variables
@@ -650,6 +651,7 @@ before packages are loaded."
       (interactive)
       (split-window-horizontally)
       (other-window 1)))
+  (evil-leader/set-key "/" 'spacemacs/helm-project-do-ag)
 )
 
 
