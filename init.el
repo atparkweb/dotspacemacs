@@ -51,7 +51,6 @@ This function should only modify configuration layer settings."
      (javascript :variables
                  javascript-backend 'tide
                  javascript-fmt-tool 'prettier
-                 javascript-fmt-on-save t
                  js2-mode-show-strict-warnings nil
                  node-add-modules-path t)
      lsp
@@ -85,7 +84,6 @@ This function should only modify configuration layer settings."
      (typescript :variables
                  typescript-backend 'tide
                  typescript-fmt-tool 'prettier
-                 typescript-fmt-on-save t
                  js2-mode-show-strict-warnings nil
                  typescript-linter 'eslint)
      vue
@@ -640,7 +638,6 @@ before packages are loaded."
   (add-hook 'after-make-frame-functions (
    (lambda ()
      (spacemacs/toggle-transparency))))
-  (add-hook 'before-save-hook 'tide-format-before-save)
   (add-hook 'typescript-mode-hook #'setup-tide)
   (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-common-lisp-mode)
   (define-key evil-normal-state-map (kbd "-")
