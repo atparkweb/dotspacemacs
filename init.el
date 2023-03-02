@@ -41,6 +41,9 @@ This function should only modify configuration layer settings."
      docker
      (elixir :variables
              elixir-backend 'alchemist)
+     (elm :variables
+          elm-reactor-port "8000"
+          elm-reactor-address "127.0.0.1")
      emacs-lisp
      erlang
      (git :variables
