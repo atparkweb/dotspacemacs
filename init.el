@@ -282,8 +282,8 @@ It should only modify the values of Spacemacs settings."
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(dracula
-						 kaolin-blossom
-						 material
+                         kaolin-blossom
+                         material
                          underwater)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
@@ -657,13 +657,13 @@ before packages are loaded."
       (other-window 1)))
   (evil-leader/set-key "/" 'spacemacs/helm-project-do-ag)
   (with-eval-after-load 'company
-	;; disable inline previews
-	(delq 'company-preview-if-just-one-frontend company-frontends))
+    ;; disable inline previews
+    (delq 'company-preview-if-just-one-frontend company-frontends))
   (with-eval-after-load 'copilot
-	(define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
-	(define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
-	(define-key copilot-completion-map (kbd "C-TAB") 'copilot-accept-completion-by-word)
-	(define-key copilot-completion-map (kbd "C-<tab>") 'copilot-accept-completion-by-word))
+    (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
+    (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
+    (define-key copilot-completion-map (kbd "C-TAB") 'copilot-accept-completion-by-word)
+    (define-key copilot-completion-map (kbd "C-<tab>") 'copilot-accept-completion-by-word))
 
   (add-hook 'prog-mode-hook 'copilot-mode)
 )
