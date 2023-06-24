@@ -67,6 +67,7 @@ This function should only modify configuration layer settings."
      php
      prolog
      (python :variables
+             python-pipenv-activate t
              python-backend 'python-lsp-server
              python-test-runner 'pytest)
      (react :variables
