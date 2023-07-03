@@ -53,7 +53,6 @@ This function should only modify configuration layer settings."
                  js2-mode-show-strict-warnings nil
                  node-add-modules-path t)
      lsp
-     lua
      markdown
      multiple-cursors
      (ocaml :variables
