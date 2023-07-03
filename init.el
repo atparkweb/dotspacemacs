@@ -63,7 +63,6 @@ This function should only modify configuration layer settings."
      phoenix
      php
      prettier
-     prolog
      (python :variables
              python-pipenv-activate t
              python-backend 'python-lsp-server
