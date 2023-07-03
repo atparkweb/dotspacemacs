@@ -46,7 +46,6 @@ This function should only modify configuration layer settings."
           git-magit-status-fullscreen t)
      graphviz
      graphql
-     haskell
      helm
      (javascript :variables
                  javascript-backend 'tide
