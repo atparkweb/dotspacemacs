@@ -67,6 +67,7 @@ This function should only modify configuration layer settings."
              python-test-runner 'pytest)
      (react :variables
             js-indent-level 4)
+	 reasonml
      ruby
      (scheme :variables
              scheme-implementation '(guile racket))
