@@ -663,8 +663,10 @@ before packages are loaded."
     (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
     (define-key copilot-completion-map (kbd "C-TAB") 'copilot-accept-completion-by-word)
     (define-key copilot-completion-map (kbd "C-<tab>") 'copilot-accept-completion-by-word))
-
+  (with-eval-after-load 'undo-tree
+    (setq undo-tree-auto-save-history nil))
   (add-hook 'prog-mode-hook 'copilot-mode)
+  (add-to-list 'org-structure-template-alist '("S" . "SRC"))
 )
 
 
