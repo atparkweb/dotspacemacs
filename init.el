@@ -34,6 +34,10 @@ This function should only modify configuration layer settings."
    dotspacemacs-configuration-layers
    '(
      auto-completion
+	 (c-c++ :variables
+			c-c++-backend 'lsp-clangd
+			c-c++-lsp-enable-semantic-highlight 'rainbow
+			c-c++-enable-organize-includes-on-save t)
      common-lisp
      csv
      django
