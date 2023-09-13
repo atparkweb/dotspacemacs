@@ -48,6 +48,9 @@ This function should only modify configuration layer settings."
      erlang
      (git :variables
           git-magit-status-fullscreen t)
+     (go :variables
+         go-format-before-save t
+         go-tab-width 4)
      graphviz
      graphql
      helm
