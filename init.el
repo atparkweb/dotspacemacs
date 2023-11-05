@@ -111,9 +111,10 @@ This function should only modify configuration layer settings."
                                                           :fetcher github
                                                           :repo "zerolfx/copilot.el"
                                                           :files ("*.el" "dist")))
+                                      prettier-js
                                       rjsx-mode
-                                      yasnippet-snippets
-                                      prettier-js)
+                                      sqlite3
+                                      yasnippet-snippets)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
