@@ -105,10 +105,10 @@ This function should only modify configuration layer settings."
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(
-                                      (copilot :location (recipe
-                                                          :fetcher github
-                                                          :repo "zerolfx/copilot.el"
-                                                          :files ("*.el" "dist")))
+                                      ;;(copilot :location (recipe
+                                      ;;                  :fetcher github
+                                      ;;                  :repo "zerolfx/copilot.el"
+                                      ;;                  :files ("*.el" "dist")))
                                       prettier-js
                                       rjsx-mode
                                       sqlite3
@@ -664,12 +664,12 @@ before packages are loaded."
   (with-eval-after-load 'company
     ;; disable inline previews
     (delq 'company-preview-if-just-one-frontend company-frontends))
-  (with-eval-after-load 'copilot
-    (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
-    (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
-    (define-key copilot-completion-map (kbd "C-TAB") 'copilot-accept-completion-by-word)
-    (define-key copilot-completion-map (kbd "C-<tab>") 'copilot-accept-completion-by-word))
-  (add-hook 'prog-mode-hook 'copilot-mode)
+;;(with-eval-after-load 'copilot
+;;  (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
+;;  (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
+;;  (define-key copilot-completion-map (kbd "C-TAB") 'copilot-accept-completion-by-word)
+;;  (define-key copilot-completion-map (kbd "C-<tab>") 'copilot-accept-completion-by-word))
+;;  (add-hook 'prog-mode-hook 'copilot-mode)
 )
 
 
