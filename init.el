@@ -68,7 +68,6 @@ This function should only modify configuration layer settings."
      org
      phoenix
      php
-     prolog
      (python :variables
              python-pipenv-activate t
              python-backend 'python-lsp-server
@@ -92,7 +91,6 @@ This function should only modify configuration layer settings."
                  typescript-fmt-on-save t
                  js2-mode-show-strict-warnings nil
                  typescript-linter 'tslint)
-     vue
      (xclipboard :variables
                  xclipboard-enable-cliphist t)
      yaml)
