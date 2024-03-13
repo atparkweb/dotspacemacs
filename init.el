@@ -286,10 +286,9 @@ It should only modify the values of Spacemacs settings."
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
                          dracula
-                         django
+                         flatland
                          (kaolin-shiva :location (recipe :fetcher github
-                                       :repo "ogdenwebb/emacs-kaolin-themes"))
-                         flatland)
+                                       :repo "ogdenwebb/emacs-kaolin-themes")))
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The
