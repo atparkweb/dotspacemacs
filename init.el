@@ -32,7 +32,8 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(go
+   '(vimscript
+     go
      auto-completion
      (c-c++ :variables
             c-c++-backend 'lsp-clangd
