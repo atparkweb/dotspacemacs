@@ -69,6 +69,7 @@ This function should only modify configuration layer settings."
      prettier
      (python :variables
              python-pipenv-activate t
+             python-format-on-save t
              python-backend 'python-lsp-server
              python-test-runner 'pytest)
      (react :variables
