@@ -69,6 +69,7 @@ This function should only modify configuration layer settings."
      phoenix
      php
      (python :variables
+             python-enable-yapf-format-on-save t
              python-pipenv-activate t
              python-backend 'python-lsp-server
              python-test-runner 'pytest)
