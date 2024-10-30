@@ -4,7 +4,7 @@
 
 (defun dotspacemacs/layers ()
   "Layer configuration:
-This function should only modify configuration layer settings."
+  This function should only modify configuration layer settings."
   (setq-default
    ;; Base distribution to use. This is a layer contained in the directory
    ;; `+distribution'. For now available distributions are `spacemacs-base'
@@ -33,70 +33,58 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(vimscript
-     go
-     auto-completion
-     (c-c++ :variables
-            c-c++-backend 'lsp-clangd
-            c-c++-lsp-enable-semantic-highlight 'rainbow
-            c-c++-enable-clang-format-on-save t
-            c-c++-enable-organize-includes-on-save t)
-     common-lisp
-     csv
-     django
-     docker
-     (elixir :variables
-             elixir-backend 'alchemist)
-     emacs-lisp
-     erlang
-     (git :variables
-          git-magit-status-fullscreen t)
-     graphviz
-     graphql
-     helm
-     (javascript :variables
-                 javascript-backend 'tide
-                 javascript-fmt-tool 'prettier
-                 js2-mode-show-strict-warnings nil
-                 node-add-modules-path t)
-     lsp
-     markdown
-     multiple-cursors
-     (ocaml :variables
-            ocaml-format-on-save t)
-     org
-     phoenix
-     php
-     prettier
-     (python :variables
-             python-pipenv-activate t
-             python-format-on-save t
-             python-backend 'python-lsp-server
-             python-test-runner 'pytest)
-     (react :variables
-            js-indent-level 4)
-     reasonml
-     ruby
-     (scheme :variables
-             scheme-implementation '(guile racket))
-     (shell :variables
-             shell-default-height 30
-             shell-default-position 'bottom)
-     sql
-     svelte
-     syntax-checking
-     themes-megapack
-     treemacs
-     (typescript :variables
-                 js2-mode-show-strict-warnings nil
-                 typescript-backend 'tide
-                 typescript-fmt-on-save t
-                 typescript-fmt-tool 'prettier
-                 typescript-linter 'eslint
-                 typescript-lsp-linter nil)
-     vue
-     (xclipboard :variables
-                 xclipboard-enable-cliphist t)
-     yaml)
+	 auto-completion
+	 (c-c++ :variables
+			c-c++-backend 'lsp-clangd
+			c-c++-lsp-enable-semantic-highlight 'rainbow
+			c-c++-enable-clang-format-on-save t
+			c-c++-enable-organize-includes-on-save t)
+	 csv
+	 django
+	 docker
+	 emacs-lisp
+	 (git :variables
+		  git-magit-status-fullscreen t)
+	 graphviz
+	 graphql
+	 helm
+	 (javascript :variables
+				 javascript-backend 'tide
+				 javascript-fmt-tool 'prettier
+				 js2-mode-show-strict-warnings nil
+				 node-add-modules-path t)
+	 lsp
+	 markdown
+	 multiple-cursors
+	 org
+	 prettier
+	 (python :variables
+			 python-pipenv-activate t
+			 python-format-on-save t
+			 python-backend 'python-lsp-server
+			 python-test-runner 'pytest)
+	 (react :variables
+			js-indent-level 4)
+	 ruby
+	 (shell :variables
+			shell-default-height 30
+			shell-default-position 'bottom)
+	 sql
+	 svelte
+	 syntax-checking
+	 themes-megapack
+	 treemacs
+	 (typescript :variables
+				 js2-mode-show-strict-warnings nil
+				 typescript-backend 'tide
+				 typescript-fmt-on-save t
+				 typescript-fmt-tool 'prettier
+				 typescript-linter 'eslint
+				 typescript-lsp-linter nil)
+	 vue
+	 (xclipboard :variables
+				 xclipboard-enable-cliphist t)
+	 yaml)
 
 
    ;; List of additional packages that will be installed without being wrapped
@@ -108,16 +96,13 @@ This function should only modify configuration layer settings."
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(
-                                      editorconfig
-                                      rjsx-mode
-                                      yasnippet-snippets
-                                      prettier-js)
+									  editorconfig
+									  rjsx-mode
+									  yasnippet-snippets
+									  prettier-js)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
-
-   ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(flycheck-ocaml)
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -245,7 +230,7 @@ It should only modify the values of Spacemacs settings."
    ;; number is the project limit and the second the limit on the recent files
    ;; within a project.
    dotspacemacs-startup-lists '((recents . 5)
-                                (projects . 7))
+								(projects . 7))
 
    ;; True if the home buffer should respond to resize events. (default t)
    dotspacemacs-startup-buffer-responsive t
@@ -284,11 +269,8 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(
-                         dracula
-                         flatland
-                         (kaolin-shiva :location (recipe :fetcher github
-                                       :repo "ogdenwebb/emacs-kaolin-themes")))
+   dotspacemacs-themes '(dracula
+						 django)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The
@@ -307,9 +289,9 @@ It should only modify the values of Spacemacs settings."
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
    dotspacemacs-default-font '("M PLUS 1 Code"
-                               :size 16
-                               :weight regular
-                               :width normal)
+							   :size 18
+							   :weight regular
+							   :width normal)
 
    ;; The leader key (default "SPC")
    dotspacemacs-leader-key "SPC"
@@ -588,7 +570,7 @@ default it calls `spacemacs/load-spacemacs-env' which loads the environment
 variables declared in `~/.spacemacs.env' or `~/.spacemacs.d/.spacemacs.env'.
 See the header of this file for more information."
   (spacemacs/load-spacemacs-env)
-)
+  )
 
 (defun setup-indent (n)
   ;; web development indentation
@@ -621,20 +603,20 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (add-to-list 'exec-path "~/.nvm/versions/node/v16.19.0/bin ")
   (add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
   (setq backup-directory-alist
-        `((".*" . ,temporary-file-directory)))
+		`((".*" . ,temporary-file-directory)))
   (setq auto-save-file-name-transforms
-        `((".*" ,temporary-file-directory t)))
+		`((".*" ,temporary-file-directory t)))
   (setq tramp-ssh-controlmaster-options
-      "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
+		"-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
   (setup-indent 4)
-)
+  )
 
 (defun dotspacemacs/user-load ()
   "Library to load while dumping.
 This function is called only while dumping Spacemacs configuration. You can
 `require' or `load' the libraries of your choice that will be included in the
 dump."
-)
+  )
 
 
 (defun dotspacemacs/user-config ()
@@ -644,28 +626,27 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (add-hook 'after-make-frame-functions (
-   (lambda ()
-     (spacemacs/toggle-transparency))))
+										 (lambda ()
+										   (spacemacs/toggle-transparency))))
   (add-hook 'typescript-mode-hook #'setup-tide)
-  (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-common-lisp-mode)
   (define-key evil-normal-state-map (kbd "-")
-    (lambda ()
-      (interactive)
-      (split-window-vertically)
-      (other-window 1)))
+	(lambda ()
+	  (interactive)
+	  (split-window-vertically)
+	  (other-window 1)))
 
   (define-key evil-normal-state-map (kbd "|")
-    (lambda ()
-      (interactive)
-      (split-window-horizontally)
-      (other-window 1)))
+	(lambda ()
+	  (interactive)
+	  (split-window-horizontally)
+	  (other-window 1)))
   (evil-leader/set-key "/" 'spacemacs/helm-project-do-ag)
   (with-eval-after-load 'company
-    ;; disable inline previews
-    (delq 'company-preview-if-just-one-frontend company-frontends))
+	;; disable inline previews
+	(delq 'company-preview-if-just-one-frontend company-frontends))
   (with-eval-after-load 'undo-tree
-    (setq undo-tree-auto-save-history nil))
-)
+	(setq undo-tree-auto-save-history nil))
+  )
 
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -675,25 +656,25 @@ before packages are loaded."
 This is an auto-generated function, do not modify its content directly, use
 Emacs customize menu instead.
 This function is called at the very end of Spacemacs initialization."
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("a3e99dbdaa138996bb0c9c806bc3c3c6b4fd61d6973b946d750b555af8b7555b" "db7f422324a763cfdea47abf0f931461d1493f2ecf8b42be87bbbbbabf287bfe" "78e6be576f4a526d212d5f9a8798e5706990216e9be10174e3f3b015b8662e27" "a37d20710ab581792b7c9f8a075fcbb775d4ffa6c8bce9137c84951b1b453016" "eb122e1df607ee9364c2dfb118ae4715a49f1a9e070b9d2eb033f1cefd50a908" default))
- '(indent-tabs-mode t)
- '(org-agenda-files '("/Users/andy.park/Documents/planner/tasks.org"))
- '(package-selected-packages
-   '(sqlite3 company-go flycheck-golangci-lint go-eldoc go-fill-struct go-gen-test go-guru go-impl go-rename go-tag go-mode godoctor company-php ac-php-core xcscope company-phpactor drupal-mode geben php-auto-yasnippets php-extras php-mode phpactor composer php-runtime phpcbf phpunit graphviz-dot-mode add-node-modules-path company counsel-gtags counsel swiper ivy dap-mode lsp-docker lsp-treemacs bui yaml lsp-mode markdown-mode ggtags helm-gtags impatient-mode htmlize import-js grizzl js-doc js2-refactor yasnippet multiple-cursors livid-mode nodejs-repl npm-mode prettier-js skewer-mode js2-mode simple-httpd tern web-beautify ws-butler writeroom-mode winum which-key volatile-highlights vim-powerline vi-tilde-fringe uuidgen use-package undo-tree treemacs-projectile treemacs-persp treemacs-icons-dired treemacs-evil toc-org term-cursor symon symbol-overlay string-inflection string-edit spacemacs-whitespace-cleanup spacemacs-purpose-popwin spaceline-all-the-icons space-doc restart-emacs request rainbow-delimiters quickrun popwin pcre2el password-generator paradox overseer org-superstar open-junk-file nameless multi-line macrostep lorem-ipsum link-hint inspector info+ indent-guide hybrid-mode hungry-delete holy-mode hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio font-lock+ flycheck-package flycheck-elsa flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-evilified-state evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu emr elisp-slime-nav elisp-def editorconfig dumb-jump drag-stuff dotenv-mode dired-quick-sort diminish devdocs define-word column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile aggressive-indent ace-link ace-jump-helm-line))
- '(tab-width 4)
- '(warning-suppress-log-types '((comp) (comp)))
- '(warning-suppress-types '((comp))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:background nil))))
- '(highlight-parentheses-highlight ((nil (:weight ultra-bold))) t))
-)
+  (custom-set-variables
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(custom-safe-themes
+	 '("2b3f1e6abe0f02ff73d95dca04901bdbc2ecebe80fa453eded34fa39c8b050cb" "5bbe9bdc0ef79c90f171914acb71ab4f226b25c226c098f9b289dc332e1207a5" "43cf3d1a792bfc1fb1965c36561327c8b59ac76760eeec621ce24b74136ec751" "3632cf223c62cb7da121be0ed641a2243f7ec0130178722554e613c9ab3131de" "7fd8b914e340283c189980cd1883dbdef67080ad1a3a9cc3df864ca53bdc89cf" "6313eeb08a54045a6d3945c28ab5a97916334e189cebd9c67c8b72beed0de265" "a3e99dbdaa138996bb0c9c806bc3c3c6b4fd61d6973b946d750b555af8b7555b" "db7f422324a763cfdea47abf0f931461d1493f2ecf8b42be87bbbbbabf287bfe" "78e6be576f4a526d212d5f9a8798e5706990216e9be10174e3f3b015b8662e27" "a37d20710ab581792b7c9f8a075fcbb775d4ffa6c8bce9137c84951b1b453016" "eb122e1df607ee9364c2dfb118ae4715a49f1a9e070b9d2eb033f1cefd50a908" default))
+   '(indent-tabs-mode t)
+   '(org-agenda-files '("/Users/andy.park/Documents/planner/tasks.org"))
+   '(package-selected-packages
+	 '(sqlite3 xcscope geben graphviz-dot-mode add-node-modules-path company counsel-gtags counsel swiper ivy dap-mode lsp-docker lsp-treemacs bui yaml lsp-mode markdown-mode ggtags helm-gtags impatient-mode htmlize import-js grizzl js-doc js2-refactor yasnippet multiple-cursors livid-mode nodejs-repl npm-mode prettier-js skewer-mode js2-mode simple-httpd tern web-beautify ws-butler writeroom-mode winum which-key volatile-highlights vim-powerline vi-tilde-fringe uuidgen use-package undo-tree treemacs-projectile treemacs-persp treemacs-icons-dired treemacs-evil toc-org term-cursor symon symbol-overlay string-inflection string-edit spacemacs-whitespace-cleanup spacemacs-purpose-popwin spaceline-all-the-icons space-doc restart-emacs request rainbow-delimiters quickrun popwin pcre2el password-generator paradox overseer org-superstar open-junk-file nameless multi-line macrostep lorem-ipsum link-hint inspector info+ indent-guide hybrid-mode hungry-delete holy-mode hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio font-lock+ flycheck-package flycheck-elsa flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-evilified-state evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu emr elisp-slime-nav elisp-def editorconfig dumb-jump drag-stuff dotenv-mode dired-quick-sort diminish devdocs define-word column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile aggressive-indent ace-link ace-jump-helm-line))
+   '(tab-width 4)
+   '(warning-suppress-log-types '((comp) (comp)))
+   '(warning-suppress-types '((comp))))
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(default ((t (:background nil))))
+   '(highlight-parentheses-highlight ((nil (:weight ultra-bold))) t))
+  )
