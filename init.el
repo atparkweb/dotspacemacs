@@ -35,6 +35,7 @@
    '(vimscript
 	 auto-completion
 	 (c-c++ :variables
+			c-basic-offset 4
 			c-c++-backend 'lsp-clangd
 			c-c++-lsp-enable-semantic-highlight 'rainbow
 			c-c++-enable-clang-format-on-save t
