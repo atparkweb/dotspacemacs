@@ -576,6 +576,8 @@ See the header of this file for more information."
 
 (defun setup-indent (n)
   ;; web development indentation
+  (setq-default indent-tabs-mode t)
+  (setq-default tab-width n)
   (setq js-indent-level n)
   (setq typescript-indent-level n)
   (setq js2-basic-offset n)
@@ -609,9 +611,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq auto-save-file-name-transforms
 		`((".*" ,temporary-file-directory t)))
   (setq tramp-ssh-controlmaster-options
-		"-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
-  (setup-indent 4)
-  )
+		"-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no"))
 
 (defun dotspacemacs/user-load ()
   "Library to load while dumping.
@@ -648,7 +648,7 @@ before packages are loaded."
 	(delq 'company-preview-if-just-one-frontend company-frontends))
   (with-eval-after-load 'undo-tree
 	(setq undo-tree-auto-save-history nil))
-  )
+  (setup-indent 4))
 
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -669,7 +669,6 @@ This function is called at the very end of Spacemacs initialization."
    '(org-agenda-files '("/Users/andy.park/octoenergy/planner/tasks.org"))
    '(package-selected-packages
 	 '(counsel-css counsel-projectile ivy-avy ivy-hydra ivy-purpose ivy-xref ivy-yasnippet lsp-ivy smex sqlite3 xcscope geben graphviz-dot-mode add-node-modules-path company counsel-gtags counsel swiper ivy dap-mode lsp-docker lsp-treemacs bui yaml lsp-mode markdown-mode ggtags helm-gtags impatient-mode htmlize import-js grizzl js-doc js2-refactor yasnippet multiple-cursors livid-mode nodejs-repl npm-mode prettier-js skewer-mode js2-mode simple-httpd tern web-beautify ws-butler writeroom-mode winum which-key volatile-highlights vim-powerline vi-tilde-fringe uuidgen use-package undo-tree treemacs-projectile treemacs-persp treemacs-icons-dired treemacs-evil toc-org term-cursor symon symbol-overlay string-inflection string-edit spacemacs-whitespace-cleanup spacemacs-purpose-popwin spaceline-all-the-icons space-doc restart-emacs request rainbow-delimiters quickrun popwin pcre2el password-generator paradox overseer org-superstar open-junk-file nameless multi-line macrostep lorem-ipsum link-hint inspector info+ indent-guide hybrid-mode hungry-delete holy-mode hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio font-lock+ flycheck-package flycheck-elsa flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-evilified-state evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu emr elisp-slime-nav elisp-def editorconfig dumb-jump drag-stuff dotenv-mode dired-quick-sort diminish devdocs define-word column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile aggressive-indent ace-link ace-jump-helm-line))
-   '(tab-width 4)
    '(warning-suppress-log-types '((comp) (comp)))
    '(warning-suppress-types '((comp))))
   (custom-set-faces
