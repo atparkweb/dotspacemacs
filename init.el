@@ -58,7 +58,8 @@
 	 lsp
 	 markdown
 	 multiple-cursors
-	 org
+	 (org :variables
+		  org-pomodoro-finished-sound-args "-v 0.1")
 	 prettier
 	 (python :variables
 			 python-pipenv-activate t
