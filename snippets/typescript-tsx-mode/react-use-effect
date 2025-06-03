@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: React useEffect expression
+# key: useEffect
+# condition
+# --
+useEffect(() => {
+$0
+}, [$1]);

@@ -1,0 +1,4 @@
+#key : dnconsole
+#name : Add eslint disable-no-console comment
+# --
+/* eslint-disable no-console */
