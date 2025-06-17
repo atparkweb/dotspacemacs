@@ -76,6 +76,7 @@
 	 svelte
 	 syntax-checking
 	 themes-megapack
+	 tide
 	 treemacs
 	 (typescript :variables
 				 js2-mode-show-strict-warnings nil
