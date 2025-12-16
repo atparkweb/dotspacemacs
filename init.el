@@ -659,24 +659,69 @@ before packages are loaded."
 This is an auto-generated function, do not modify its content directly, use
 Emacs customize menu instead.
 This function is called at the very end of Spacemacs initialization."
-  (custom-set-variables
-   ;; custom-set-variables was added by Custom.
-   ;; If you edit it by hand, you could mess it up, so be careful.
-   ;; Your init file should contain only one such instance.
-   ;; If there is more than one, they won't work right.
-   '(custom-safe-themes
-	 '("2b3f1e6abe0f02ff73d95dca04901bdbc2ecebe80fa453eded34fa39c8b050cb" "5bbe9bdc0ef79c90f171914acb71ab4f226b25c226c098f9b289dc332e1207a5" "43cf3d1a792bfc1fb1965c36561327c8b59ac76760eeec621ce24b74136ec751" "3632cf223c62cb7da121be0ed641a2243f7ec0130178722554e613c9ab3131de" "7fd8b914e340283c189980cd1883dbdef67080ad1a3a9cc3df864ca53bdc89cf" "6313eeb08a54045a6d3945c28ab5a97916334e189cebd9c67c8b72beed0de265" "a3e99dbdaa138996bb0c9c806bc3c3c6b4fd61d6973b946d750b555af8b7555b" "db7f422324a763cfdea47abf0f931461d1493f2ecf8b42be87bbbbbabf287bfe" "78e6be576f4a526d212d5f9a8798e5706990216e9be10174e3f3b015b8662e27" "a37d20710ab581792b7c9f8a075fcbb775d4ffa6c8bce9137c84951b1b453016" "eb122e1df607ee9364c2dfb118ae4715a49f1a9e070b9d2eb033f1cefd50a908" default))
-   '(indent-tabs-mode t)
-   '(org-agenda-files '("/Users/andy.park/octoenergy/planner/tasks.org"))
-   '(package-selected-packages
-	 '(counsel-css counsel-projectile ivy-avy ivy-hydra ivy-purpose ivy-xref ivy-yasnippet lsp-ivy smex sqlite3 xcscope geben graphviz-dot-mode add-node-modules-path company counsel-gtags counsel swiper ivy dap-mode lsp-docker lsp-treemacs bui yaml lsp-mode markdown-mode ggtags helm-gtags impatient-mode htmlize import-js grizzl js-doc js2-refactor yasnippet multiple-cursors livid-mode nodejs-repl npm-mode prettier-js skewer-mode js2-mode simple-httpd tern web-beautify ws-butler writeroom-mode winum which-key volatile-highlights vim-powerline vi-tilde-fringe uuidgen use-package undo-tree treemacs-projectile treemacs-persp treemacs-icons-dired treemacs-evil toc-org term-cursor symon symbol-overlay string-inflection string-edit spacemacs-whitespace-cleanup spacemacs-purpose-popwin spaceline-all-the-icons space-doc restart-emacs request rainbow-delimiters quickrun popwin pcre2el password-generator paradox overseer org-superstar open-junk-file nameless multi-line macrostep lorem-ipsum link-hint inspector info+ indent-guide hybrid-mode hungry-delete holy-mode hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio font-lock+ flycheck-package flycheck-elsa flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-evilified-state evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu emr elisp-slime-nav elisp-def editorconfig dumb-jump drag-stuff dotenv-mode dired-quick-sort diminish devdocs define-word column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile aggressive-indent ace-link ace-jump-helm-line))
-   '(warning-suppress-log-types '((comp) (comp)))
-   '(warning-suppress-types '((comp))))
-  (custom-set-faces
-   ;; custom-set-faces was added by Custom.
-   ;; If you edit it by hand, you could mess it up, so be careful.
-   ;; Your init file should contain only one such instance.
-   ;; If there is more than one, they won't work right.
-   '(default ((t (:background nil))))
-   '(highlight-parentheses-highlight ((nil (:weight ultra-bold))) t))
-  )
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("2b3f1e6abe0f02ff73d95dca04901bdbc2ecebe80fa453eded34fa39c8b050cb"
+	 "5bbe9bdc0ef79c90f171914acb71ab4f226b25c226c098f9b289dc332e1207a5"
+	 "43cf3d1a792bfc1fb1965c36561327c8b59ac76760eeec621ce24b74136ec751"
+	 "3632cf223c62cb7da121be0ed641a2243f7ec0130178722554e613c9ab3131de"
+	 "7fd8b914e340283c189980cd1883dbdef67080ad1a3a9cc3df864ca53bdc89cf"
+	 "6313eeb08a54045a6d3945c28ab5a97916334e189cebd9c67c8b72beed0de265"
+	 "a3e99dbdaa138996bb0c9c806bc3c3c6b4fd61d6973b946d750b555af8b7555b"
+	 "db7f422324a763cfdea47abf0f931461d1493f2ecf8b42be87bbbbbabf287bfe"
+	 "78e6be576f4a526d212d5f9a8798e5706990216e9be10174e3f3b015b8662e27"
+	 "a37d20710ab581792b7c9f8a075fcbb775d4ffa6c8bce9137c84951b1b453016"
+	 "eb122e1df607ee9364c2dfb118ae4715a49f1a9e070b9d2eb033f1cefd50a908" default))
+ '(indent-tabs-mode t)
+ '(org-agenda-files '("/Users/andy.park/octoenergy/planner/tasks.org"))
+ '(package-selected-packages
+   '(counsel-css counsel-projectile ivy-avy ivy-hydra ivy-purpose ivy-xref
+				 ivy-yasnippet lsp-ivy smex sqlite3 xcscope geben
+				 graphviz-dot-mode add-node-modules-path company counsel-gtags
+				 counsel swiper ivy dap-mode lsp-docker lsp-treemacs bui yaml
+				 lsp-mode markdown-mode ggtags helm-gtags impatient-mode htmlize
+				 import-js grizzl js-doc js2-refactor yasnippet multiple-cursors
+				 livid-mode nodejs-repl npm-mode prettier-js skewer-mode
+				 js2-mode simple-httpd tern web-beautify ws-butler
+				 writeroom-mode winum which-key volatile-highlights
+				 vim-powerline vi-tilde-fringe uuidgen use-package undo-tree
+				 treemacs-projectile treemacs-persp treemacs-icons-dired
+				 treemacs-evil toc-org term-cursor symon symbol-overlay
+				 string-inflection string-edit spacemacs-whitespace-cleanup
+				 spacemacs-purpose-popwin spaceline-all-the-icons space-doc
+				 restart-emacs request rainbow-delimiters quickrun popwin
+				 pcre2el password-generator paradox overseer org-superstar
+				 open-junk-file nameless multi-line macrostep lorem-ipsum
+				 link-hint inspector info+ indent-guide hybrid-mode
+				 hungry-delete holy-mode hl-todo highlight-parentheses
+				 highlight-numbers highlight-indentation hide-comnt help-fns+
+				 helm-xref helm-themes helm-swoop helm-purpose helm-projectile
+				 helm-org helm-mode-manager helm-make helm-flx helm-descbinds
+				 helm-ag google-translate golden-ratio font-lock+
+				 flycheck-package flycheck-elsa flx-ido fancy-battery eyebrowse
+				 expand-region evil-visualstar evil-visual-mark-mode
+				 evil-unimpaired evil-tutor evil-textobj-line evil-surround
+				 evil-numbers evil-nerd-commenter evil-mc evil-matchit
+				 evil-lisp-state evil-lion evil-indent-plus evil-iedit-state
+				 evil-goggles evil-exchange evil-evilified-state evil-escape
+				 evil-ediff evil-easymotion evil-collection evil-cleverparens
+				 evil-args evil-anzu eval-sexp-fu emr elisp-slime-nav elisp-def
+				 editorconfig dumb-jump drag-stuff dotenv-mode dired-quick-sort
+				 diminish devdocs define-word column-enforce-mode
+				 clean-aindent-mode centered-cursor-mode auto-highlight-symbol
+				 auto-compile aggressive-indent ace-link ace-jump-helm-line))
+ '(safe-local-variable-directories '("/Users/andy.park/octoenergy/flow/workflows-v2/"))
+ '(warning-suppress-log-types '((comp) (comp)))
+ '(warning-suppress-types '((comp))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:background nil))))
+ '(highlight-parentheses-highlight ((nil (:weight ultra-bold))) t))
+)
